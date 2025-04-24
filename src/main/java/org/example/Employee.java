@@ -56,8 +56,8 @@ public class Employee {
         return hoursWorked * payRate;
     }
 
-    public void displayInfo(){
-        System.out.printf("%d, %s, %.2f\n", id, name, getGrossPay());
+    public String displayInfo(){
+        return String.format("%d| %s| %.2f\n", id, name, getGrossPay());
     }
 
     @Override

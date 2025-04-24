@@ -1,9 +1,6 @@
 package org.example;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,4 +47,14 @@ public class PayrollReader {
         return employeeList;
 
     }
+    public static void writeFile(Employee employee, String fileName) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+            writer.append(employee.displayInfo());
+            writer.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
